@@ -1,104 +1,121 @@
 {
+  "widget": "autocomplete",
+  "labelAccessor": "",
+  "AutoCompleteValue": "",
+  "AutoCompleteDataQuery": "query\nQuery{\n\tTwits{\n\t\tproductName\n\t}\n}\n",
+  "placeholder": "Gimme productName",
+  "formFile": {
     "forms": {
-        "Query": {
-            "node": {
-                "name": "Query",
-                "type": {
-                    "fieldType": {
-                        "name": "type",
-                        "type": "name"
-                    },
-                    "operations": [
-                        "query"
-                    ]
-                },
-                "data": {
-                    "type": "ObjectTypeDefinition"
-                },
-                "interfaces": [],
-                "directives": [],
-                "args": [
-                    {
-                        "name": "Me",
-                        "args": [],
-                        "type": {
-                            "fieldType": {
-                                "type": "required",
-                                "nest": {
-                                    "name": "Profile",
-                                    "type": "name"
-                                }
-                            }
-                        },
-                        "directives": [],
-                        "interfaces": [],
-                        "data": {
-                            "type": "FieldDefinition"
-                        }
-                    },
-                    {
-                        "name": "Twits",
-                        "args": [],
-                        "type": {
-                            "fieldType": {
-                                "type": "required",
-                                "nest": {
-                                    "type": "array",
-                                    "nest": {
-                                        "type": "required",
-                                        "nest": {
-                                            "name": "Twit",
-                                            "type": "name"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "directives": [],
-                        "interfaces": [],
-                        "data": {
-                            "type": "FieldDefinition"
-                        }
-                    }
-                ]
-            }
-        },
-        "Query.Me": {
-            "node": {
-                "name": "Me",
-                "args": [],
-                "type": {
-                    "fieldType": {
-                        "type": "required",
-                        "nest": {
-                            "name": "Profile",
-                            "type": "name"
-                        }
-                    }
-                },
-                "directives": [],
-                "interfaces": [],
-                "data": {
-                    "type": "FieldDefinition"
+      "Query": {
+        "node": {
+          "name": "Query",
+          "type": {
+            "fieldType": {
+              "name": "type",
+              "type": "name"
+            },
+            "operations": [
+              "query"
+            ]
+          },
+          "data": {
+            "type": "ObjectTypeDefinition"
+          },
+          "interfaces": [],
+          "directives": [],
+          "args": [
+            {
+              "name": "Me",
+              "description": "",
+              "args": [],
+              "type": {
+                "fieldType": {
+                  "type": "required",
+                  "nest": {
+                    "name": "Profile",
+                    "type": "name"
+                  }
                 }
-            }
-        },
-        "Query.Me.abstract": {
-            "node": {
-                "name": "abstract",
-                "args": [],
-                "type": {
-                    "fieldType": {
-                        "name": "String",
+              },
+              "directives": [],
+              "interfaces": [],
+              "data": {
+                "type": "FieldDefinition"
+              }
+            },
+            {
+              "name": "Twits",
+              "description": "",
+              "args": [],
+              "type": {
+                "fieldType": {
+                  "type": "required",
+                  "nest": {
+                    "type": "array",
+                    "nest": {
+                      "type": "required",
+                      "nest": {
+                        "name": "Twit",
                         "type": "name"
+                      }
                     }
-                },
-                "directives": [],
-                "interfaces": [],
-                "data": {
-                    "type": "FieldDefinition"
+                  }
                 }
+              },
+              "directives": [],
+              "interfaces": [],
+              "data": {
+                "type": "FieldDefinition"
+              }
             }
+          ]
         }
+      },
+      "Query.Twits": {
+        "node": {
+          "name": "Twits",
+          "description": "",
+          "args": [],
+          "type": {
+            "fieldType": {
+              "type": "required",
+              "nest": {
+                "type": "array",
+                "nest": {
+                  "type": "required",
+                  "nest": {
+                    "name": "Twit",
+                    "type": "name"
+                  }
+                }
+              }
+            }
+          },
+          "directives": [],
+          "interfaces": [],
+          "data": {
+            "type": "FieldDefinition"
+          }
+        }
+      },
+      "Query.Twits.productName": {
+        "node": {
+          "name": "productName",
+          "description": "",
+          "args": [],
+          "type": {
+            "fieldType": {
+              "name": "String",
+              "type": "name"
+            }
+          },
+          "directives": [],
+          "interfaces": [],
+          "data": {
+            "type": "FieldDefinition"
+          }
+        }
+      }
     }
+  }
 }
