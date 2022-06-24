@@ -1,104 +1,113 @@
 {
-    "forms": {
-        "Query": {
-            "node": {
-                "name": "Query",
-                "type": {
-                    "fieldType": {
-                        "name": "type",
-                        "type": "name"
-                    },
-                    "operations": [
-                        "query"
-                    ]
-                },
-                "data": {
-                    "type": "ObjectTypeDefinition"
-                },
-                "interfaces": [],
-                "directives": [],
-                "args": [
-                    {
-                        "name": "Me",
-                        "args": [],
-                        "type": {
-                            "fieldType": {
-                                "type": "required",
-                                "nest": {
-                                    "name": "Profile",
-                                    "type": "name"
-                                }
-                            }
-                        },
-                        "directives": [],
-                        "interfaces": [],
-                        "data": {
-                            "type": "FieldDefinition"
-                        }
-                    },
-                    {
-                        "name": "Twits",
-                        "args": [],
-                        "type": {
-                            "fieldType": {
-                                "type": "required",
-                                "nest": {
-                                    "type": "array",
-                                    "nest": {
-                                        "type": "required",
-                                        "nest": {
-                                            "name": "Twit",
-                                            "type": "name"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "directives": [],
-                        "interfaces": [],
-                        "data": {
-                            "type": "FieldDefinition"
-                        }
-                    }
-                ]
-            }
+  "forms": {
+    "Query": {
+      "node": {
+        "name": "Query",
+        "type": {
+          "fieldType": {
+            "name": "type",
+            "type": "name"
+          },
+          "operations": [
+            "query"
+          ]
         },
-        "Query.Me": {
-            "node": {
-                "name": "Me",
-                "args": [],
-                "type": {
-                    "fieldType": {
-                        "type": "required",
-                        "nest": {
-                            "name": "Profile",
-                            "type": "name"
-                        }
-                    }
-                },
-                "directives": [],
-                "interfaces": [],
-                "data": {
-                    "type": "FieldDefinition"
-                }
-            }
+        "data": {
+          "type": "ObjectTypeDefinition"
         },
-        "Query.Me.abstract": {
-            "node": {
-                "name": "abstract",
-                "args": [],
-                "type": {
-                    "fieldType": {
-                        "name": "String",
-                        "type": "name"
-                    }
-                },
-                "directives": [],
-                "interfaces": [],
-                "data": {
-                    "type": "FieldDefinition"
+        "interfaces": [],
+        "directives": [],
+        "args": [
+          {
+            "name": "Me",
+            "args": [],
+            "type": {
+              "fieldType": {
+                "type": "required",
+                "nest": {
+                  "name": "Profile",
+                  "type": "name"
                 }
+              }
+            },
+            "directives": [],
+            "interfaces": [],
+            "data": {
+              "type": "FieldDefinition"
             }
+          },
+          {
+            "name": "Twits",
+            "args": [],
+            "type": {
+              "fieldType": {
+                "type": "required",
+                "nest": {
+                  "type": "array",
+                  "nest": {
+                    "type": "required",
+                    "nest": {
+                      "name": "Twit",
+                      "type": "name"
+                    }
+                  }
+                }
+              }
+            },
+            "directives": [],
+            "interfaces": [],
+            "data": {
+              "type": "FieldDefinition"
+            }
+          }
+        ]
+      }
+    },
+    "Query.Twits": {
+      "node": {
+        "name": "Twits",
+        "args": [],
+        "type": {
+          "fieldType": {
+            "type": "required",
+            "nest": {
+              "type": "array",
+              "nest": {
+                "type": "required",
+                "nest": {
+                  "name": "Twit",
+                  "type": "name"
+                }
+              }
+            }
+          }
+        },
+        "directives": [],
+        "interfaces": [],
+        "data": {
+          "type": "FieldDefinition"
         }
+      }
+    },
+    "Query.Twits.sentence": {
+      "node": {
+        "name": "sentence",
+        "args": [],
+        "type": {
+          "fieldType": {
+            "type": "required",
+            "nest": {
+              "name": "String",
+              "type": "name"
+            }
+          }
+        },
+        "directives": [],
+        "interfaces": [],
+        "data": {
+          "type": "FieldDefinition"
+        }
+      }
     }
+  }
 }
